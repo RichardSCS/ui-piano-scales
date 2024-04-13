@@ -1,0 +1,44 @@
+
+            body{
+                font-family: Lato;
+            }
+            #nav-outer{
+                margin-left:10%;
+            }
+
+            .navbar-brand{
+                margin-left: -15px;
+            }
+            #banner-wel{
+                margin-left: 30px;
+                color:#7D7D7D;
+
+            }
+                #banner-lower{
+        color: #7D7D7D;
+        font-size: 14px;
+        margin-left: 70px;
+
+    }
+      #banner-lower2{
+        color: #7D7D7D;
+        font-size: 14px;
+        margin-left: 14px;
+
+    }
+      .part2{
+          height: 50%;
+          margin-top: -12px;
+      }
+      .quiz-title{
+          margin-top: 30px;
+          font-size: 40px;
+          font-weight: bold;
+          text-align: center;
+      }
+      .instruction{
+          margin-top: 50px;
+          font-size: 25px;
+           color: #7D7D7D;
+          text-align: center;
+      }
