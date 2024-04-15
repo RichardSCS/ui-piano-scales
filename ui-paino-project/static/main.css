@@ -44,12 +44,23 @@
           text-align: center;
       }
 #piano {
+    margin-top: 140px;
     display: flex;
     align-items: flex-end;
     position: relative; /* Ensures absolute positioning within */
     height: 200px; /* Adjust as needed */
     width: 100%; /* Adjust as needed */
 }
+
+#piano2 {
+    margin-top: 190px;
+    display: flex;
+    align-items: flex-end;
+    position: relative; /* Ensures absolute positioning within */
+    height: 200px; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+}
+
 
 .key {
     border: 1px solid #000;
@@ -75,33 +86,34 @@
 }
 
 /* Individual adjustments for each black key in a typical octave */
-/* Positioning for black keys in Octave 1 */
-.black.c-sharp { left: 27px; }
-.black.d-sharp { left: 76px; }
-.black.f-sharp { left: 100px; }
-.black.g-sharp { left: 125px; }
-.black.a-sharp { left: 150px; }
+.black.a-sharp-0 { left: 27px; }
+
+.black.c-sharp { left: 77px; }
+.black.d-sharp { left: 103px; }
+.black.f-sharp { left: 153px; }
+.black.g-sharp { left: 175px; }
+.black.a-sharp { left: 200px; }
 
 /* Positioning for black keys in Octave 2  */
-.black.c-sharp-2 { left: 198px; }
-.black.d-sharp-2 { left: 223px; }
-.black.f-sharp-2 { left: 273px; }
-.black.g-sharp-2 { left: 297px; }
-.black.a-sharp-2 { left: 321px; }
+.black.c-sharp-2 { left: 248px; }
+.black.d-sharp-2 { left: 273px; }
+.black.f-sharp-2 { left: 321px; }
+.black.g-sharp-2 { left: 347px; }
+.black.a-sharp-2 { left: 371px; }
 
 /* Octave 3 */
-.black.c-sharp-3 { left: 585px; }
-.black.d-sharp-3 { left: 515px; }
-.black.f-sharp-3 { left: 540px; }
-.black.g-sharp-3 { left: 589px; }
-.black.a-sharp-3 { left: 613px; }
+.black.c-sharp-3 { left: 420px; }
+.black.d-sharp-3 { left: 445px; }
+.black.f-sharp-3 { left: 493px; }
+.black.g-sharp-3 { left: 518px; }
+.black.a-sharp-3 { left: 542px; }
 
 /* Octave 4*/
-.black.c-sharp-4 { left: 662px; }
-.black.d-sharp-4 { left: 688px; }
-.black.f-sharp-4 { left: 711px; }
-.black.g-sharp-4 { left: 760px; }
-.black.a-sharp-4 { left: 711px; }
+.black.c-sharp-4 { left: 590px; }
+.black.d-sharp-4 { left:615px; }
+.black.f-sharp-4 { left: 663px; }
+.black.g-sharp-4 { left: 688px; }
+.black.a-sharp-4 { left: 713px; }
 
 .black.c-sharp-5 { left: 761px; }
 .black.d-sharp-5 { left: 786px; }
@@ -120,3 +132,15 @@
 .black.f-sharp-7 { left: 1177px; }
 .black.g-sharp-7 { left: 1201px; }
 .black.a-sharp-7 { left: 1226px; }
+
+.answer-form{
+    margin-top: 80px;
+    text-align: center;
+}
+.scalesimage{
+    margin-top: 30px;
+    margin-left: 35%;
+}
+
+
+

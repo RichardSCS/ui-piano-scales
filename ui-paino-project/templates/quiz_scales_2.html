@@ -3,10 +3,45 @@
 {% block content %}
     <div class="container-fluid view-page">
         <div class="row">
-            <div class="quiz-title"> Basic Theory Quiz! </div>
-             <div class="instruction"> Play middle C on the piano below</div>
+            <div class="quiz-title"> Scales Quiz! </div>
 
-     <div id="piano">
+               <form class="answer-form" action="/submit-your-answer" method="post">
+        <fieldset>
+            <legend> Which scale is being played here:</legend>
+                <div>
+            <!-- Option A -->
+            <div>
+                <input type="radio" id="d" name="identify2" value="D">
+                <label for="D">D</label>
+            </div>
+
+            <!-- Option B -->
+            <div>
+                <input type="radio" id="a" name="identify2" value="A">
+                <label for="A">A
+</label>
+            </div>
+
+            <!-- Option C -->
+            <div>
+                <input type="radio" id="g" name="identify2" value="G">
+                <label for="G">G </label>
+            </div>
+
+                    <div>
+                <input type="radio" id="fsharp" name="identify2" value="F sharp">
+                <label for="Fsharp">F# </label>
+            </div>
+
+</div>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+               <div id="piano2">
         <!-- First partial octave A0-B0 -->
         <div data-note="A0" class="key white"></div>
         <div data-note="A#0" class="key black a-sharp-0"></div>
