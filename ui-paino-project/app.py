@@ -9,17 +9,20 @@ app = Flask(__name__)
 def hello_world():  # put application's code here a
     return render_template("home.html")
 
-@app.route('/learn/theory')
+@app.route('/learn-theory')
 def learn_theory():  # put application's code here
-    return render_template("learn_theory.html")
+	id = request.args.get('id')
+	# You can now pass this ID to your template
+	return render_template("learn_theory.html", id=id)
+	#return render_template("learn_theory.html")
 
-@app.route('/learn/scales')
+@app.route('/learn-scales')
 def learn_scales():  # put application's code here
     return render_template("learn_scales.html")
 
-@app.route('/quiz/theory')
+@app.route('/quiz-theory')
 def quiz_theory():  # put application's code here
-    return render_template("quiz_theory.html")
+	return render_template("quiz_theory.html")
 
 @app.route('/quiz/scales/1')
 def quiz_scale():  # put application's code here
