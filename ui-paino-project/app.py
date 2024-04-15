@@ -11,7 +11,10 @@ def hello_world():  # put application's code here a
 
 @app.route('/learn/theory')
 def learn_theory():  # put application's code here
-    return render_template("learn_theory.html")
+	id = request.args.get('id')
+	# You can now pass this ID to your template
+	return render_template("learn_theory.html", id=id)
+	#return render_template("learn_theory.html")
 
 @app.route('/learn/scales')
 def learn_scales():  # put application's code here
