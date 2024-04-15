@@ -37,6 +37,10 @@ def quiz_scale_3():  # put application's code here
 def quiz_scale_4():  # put application's code here
     return render_template("quiz_scales_2.html")
 
+@app.route('/practice')
+def practice():  # put application's code here
+    return render_template("practice.html")
+
 
 if __name__ == '__main__':
     app.run()
