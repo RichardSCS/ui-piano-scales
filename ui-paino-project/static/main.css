@@ -74,6 +74,10 @@
 .white {
     background: #fff;
     z-index: 1;
+
+}
+.white:hover{
+    background-color: lightgray;
 }
 
 .black {
@@ -83,6 +87,9 @@
     position: absolute;
     z-index: 2;
     top: 0;
+}
+.black:hover{
+    background-color: dimgray;
 }
 
 /* Individual adjustments for each black key in a typical octave */

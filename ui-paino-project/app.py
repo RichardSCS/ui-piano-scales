@@ -20,7 +20,7 @@ def learn_theory():  # put application's code here
 def learn_scales():  # put application's code here
     return render_template("learn_scales.html")
 
-@app.route('/quiz-theory')
+@app.route('/quiz/theory')
 def quiz_theory():  # put application's code here
 	return render_template("quiz_theory.html")
 

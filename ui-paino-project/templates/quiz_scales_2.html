@@ -5,41 +5,42 @@
         <div class="row">
             <div class="quiz-title"> Scales Quiz! </div>
 
-               <form class="answer-form" action="/submit-your-answer" method="post">
+               <form id="answer-4" class="answer-form" action="/submit-your-answer" method="post">
         <fieldset>
-            <legend> Which scale is being played here:</legend>
+            <legend>What is the 4th note in the D major scale?</legend>
                 <div>
             <!-- Option A -->
             <div>
-                <input type="radio" id="d" name="identify2" value="D">
+                <input type="radio" id="d" name="scales4" value="D">
                 <label for="D">D</label>
             </div>
 
             <!-- Option B -->
             <div>
-                <input type="radio" id="a" name="identify2" value="A">
+                <input type="radio" id="a" name="scales4" value="A">
                 <label for="A">A
 </label>
             </div>
 
             <!-- Option C -->
             <div>
-                <input type="radio" id="g" name="identify2" value="G">
+                <input type="radio" id="g" name="scales4" value="G">
                 <label for="G">G </label>
             </div>
 
                     <div>
-                <input type="radio" id="fsharp" name="identify2" value="F sharp">
+                <input type="radio" id="fsharp" name="scales4" value="F sharp">
                 <label for="Fsharp">F# </label>
             </div>
 
 </div>
         </fieldset>
 
-        <button type="submit">Submit</button>
+        <button id="submit-4" type="button">Submit</button>
 
 
     </form>
+             <div id="result-4"></div>
 
                <div id="piano2">
         <!-- First partial octave A0-B0 -->
