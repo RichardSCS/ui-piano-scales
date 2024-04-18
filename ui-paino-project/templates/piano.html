@@ -1,48 +1,6 @@
-{% extends "layout.html" %}
-
-{% block content %}
-    <div class="container-fluid view-page">
-        <div class="row">
-            <div class="quiz-title"> Scales Quiz! </div>
-
-               <form id="answer-4" class="answer-form" action="/submit-your-answer" method="post">
-        <fieldset>
-            <legend>What is the 4th note in the D major scale?</legend>
-                <div>
-            <!-- Option A -->
-            <div>
-                <input type="radio" id="d" name="scales4" value="D">
-                <label for="D">D</label>
-            </div>
-
-            <!-- Option B -->
-            <div>
-                <input type="radio" id="a" name="scales4" value="A">
-                <label for="A">A
-</label>
-            </div>
-
-            <!-- Option C -->
-            <div>
-                <input type="radio" id="g" name="scales4" value="G">
-                <label for="G">G </label>
-            </div>
-
-                    <div>
-                <input type="radio" id="fSharp" name="scales4" value="F Sharp">
-                <label for="FSharp">FSharp </label>
-            </div>
-
-</div>
-        </fieldset>
-
-        <button id="submit-4" type="button">Submit</button>
-
-
-    </form>
-             <div id="result-4"></div>
-
-               <div id="piano2">
+<template id="piano-template">
+      <script src="/static/piano.js"></script>
+  <div id="piano">
         <!-- First partial octave A0-B0 -->
         <div data-note="A0" class="key white"></div>
         <div data-note="ASharp0" class="key black a-sharp-0"></div>
@@ -152,12 +110,5 @@
          <!-- Last Key C8 -->
         <div data-note="C8" class="key white"></div>
 
-    </div>
-            <div>
-            <a href="/quiz/scales/3" class="btn">Previous Question</a>
-                 <a href="/results" class="btn">See Results</a>
-
-            </div>
-        </div>
-    </div>
-{% endblock %}
+  </div>
+</template>

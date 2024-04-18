@@ -1,14 +1,23 @@
-// document.querySelectorAll(".piano .key").forEach(key => {
-//     console.log(key);
-//     key.addEventListener('mousedown', () => playNote(key.getAttribute('data-note')));
-// });
-
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.key').forEach(key => {
         console.log(key);
         key.addEventListener('mousedown', () => playNote(key.getAttribute('data-note')));
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Import the template
+    const template = document.getElementById('piano-template').content.cloneNode(true);
+
+    // Append the template to the piano-container div
+    document.getElementById('piano-container').appendChild(template);
+
+    // Attach event listeners to keys
+    document.querySelectorAll('.key').forEach(key => {
+        key.addEventListener('mousedown', () => playNote(key.id));
+    });
+});
+
 function playNote(note) {
     console.log("Playing note:", note);
     const audio = new Audio(`static/media/sounds/${note}.mp3`); // Ensure you have .wav files named as notes (C.wav, C#.wav, etc.)
@@ -41,13 +50,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-scales');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-scales');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer();
+    });
+});
 
 function checkAnswer() {
     const form = document.getElementById('answer-form');
@@ -70,13 +79,13 @@ function checkAnswer() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-major');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer2();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-major');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer2();
+    });
+});
 
 function checkAnswer2() {
     const form = document.getElementById('answer-form-major');
@@ -99,13 +108,13 @@ function checkAnswer2() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-id2');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer3();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-id2');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer3();
+    });
+});
 
 function checkAnswer3() {
     console.log("in 1")
@@ -132,13 +141,13 @@ function checkAnswer3() {
 
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-4');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer4();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-4');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer4();
+    });
+});
 
 function checkAnswer4() {
     console.log("in 1")
