@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container-fluid view-page">
+        <div class="row">
+            <div class="quiz-title"> Scales Quiz! </div>
+
+
+
+               <form id="answer-form-id" class="answer-form" action="/submit-your-answer" method="post">
+        <fieldset>
+            <legend>Given the third, fourth, and fifth notes of the scale, identify the scale:  F - G Flat - A Flat</legend>
+                <div>
+            <!-- Option A -->
+            <div>
+                <input type="radio" id="bflatmajor" name="scales3" value="B flat major">
+                <label for="bflatmajor">B Flat Major</label>
+            </div>
+
+            <!-- Option B -->
+            <div>
+                <input type="radio" id="dflatmajor" name="scales3" value="D flat major">
+                <label for="dflatmajor">D Flat Major
+</label>
+            </div>
+
+            <!-- Option C -->
+            <div>
+                <input type="radio" id="gflatmajor" name="scales3" value="G flat major">
+                <label for="gflatmajor">G Flat Major</label>
+            </div>
+
+</div>
+        </fieldset>
+
+        <button id="submit-button-id2" type="button">Submit</button>
+
+
+    </form>
+            <div id="result-id"></div>
+            <div class="scalesimage">
+            <img src="https://cdn.merriammusic.com/2018/12/E-Flat-Major-Scale.jpg" width="400" height="150" alt="piano major scale image" >
+        </div>
+            <div>
+               <a href="/quiz/scales/2" class="btn">Previous Question</a>
+             <a href="/quiz/scales/4" class="btn">Next Question</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Corrected line: Use the link tag for stylesheets -->
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="/static/action.js"></script>
+    <title>Learn Piano </title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div id="nav-outer" class="container" >
+            <div>
+                 <img src="https://media.istockphoto.com/id/167588497/vector/plan.jpg?s=2048x2048&w=is&k=20&c=lg-B6bwq8UlhWLpx4s6zZ6ezNTlIGUNVG5ufNUv1KNY=" width="60" height="40" alt="piano logo" >
+                 <a id="banner-wel" class="navbar-brand" href="/"> Piano Central </a>
+            </div>
+        </div>
+
+    </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container part2 ">
+              <div>
+                <a id="banner-lower" class="navbar-brand " href="/learn-theory"> Basic Theory</a>
+
+                <a id="banner-lower2" class="navbar-brand " href="/learn-scales"> Scales</a>
+
+                  <a id="banner-lower2" class="navbar-brand " href="/practice"> Practice</a>
+
+                  <a id="banner-lower2" class="navbar-brand " href="/quiz/theory"> Theory Quiz</a>
+
+                  <a id="banner-lower2" class="navbar-brand " href="/quiz/scales/1"> Scales Quiz</a>
+
+
+              </div>
+          </div>
+      </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

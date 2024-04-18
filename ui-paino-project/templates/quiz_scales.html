@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container-fluid view-page">
+        <div class="row">
+            <div class="quiz-title"> Scales Quiz! </div>
+
+
+
+               <form id="answer-form" class="answer-form" action="/submit-your-answer" method="post">
+        <fieldset>
+            <legend>Which scale is being played here:</legend>
+
+            <!-- Option A -->
+            <div>
+                <input type="radio" id="amajor" name="scales" value="A major">
+                <label for="Amajor">A major scale</label>
+            </div>
+
+            <!-- Option B -->
+            <div>
+                <input type="radio" id="bmajor" name="scales" value="B major">
+                <label for="Bmajor">B major scale</label>
+            </div>
+
+            <!-- Option C -->
+            <div>
+                <input type="radio" id="cmajor" name="scales" value="C major">
+                <label for="Cmajor">C major scale</label>
+            </div>
+
+            <!-- Option D -->
+            <div>
+                <input type="radio" id="dmajor" name="scales" value="D major">
+                <label for="Dmajor">D major scale</label>
+            </div>
+        </fieldset>
+
+        <button id="submit-button-scales" type="button">Submit</button>
+
+
+    </form>
+ <div id="result-scales"></div>
+
+            <div class="scalesimage">
+            <img src="https://www.musora.com/musora-cdn/image/quality=85/https://pianote-blog.s3.us-east-2.amazonaws.com/wp-content/uploads/2023/02/01070347/A-Major-Pentatonic-Scale-1024x260.png" width="350" height="100" alt="piano major scale image" >
+        </div>
+            <a href="/quiz/scales/2" class="btn">Next Question</a>
+        </div>
+    </div>
+{% endblock %}
