@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basic Theory</title>
+<title>Basic Scales</title>
 <style>
   /* CSS Styles */
   .container {
@@ -35,8 +35,8 @@
   // JSON Data
   const data = [
     { id: 1, name: "Now we are ready to learn scales. A scale starts with one key, and ends on the same key but one octave higher. This scale starts and ends with C:", image: "media/basic_scales_1.png", next_lesson_id:2, next_quiz_id:0 },
-    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.png", next_lesson_id:0, next_quiz_id:0 },
-    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.jpeg", next_lesson_id:4, next_quiz_id:1 }
+    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.jpeg", next_lesson_id:0, next_quiz_id:0 },
+    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.png", next_lesson_id:4, next_quiz_id:1 }
   ];
 
   // DOM Elements
@@ -87,14 +87,6 @@
     } else {
       document.getElementById('quizMessage').innerText = "";
     }
-    if(data[newIndex].id === data.length){
-      document.getElementById('quizMessage').innerText = "Done with basic theory! Click next to start learning basic scales!"
-      nextBtn.removeEventListener('click', onNextBtnClick);
-      nextBtn.addEventListener('click', onNextLearnClick);
-    }
-    else{
-      document.getElementById('quizMessage').innerText="";
-    }
   }
 
   function onQuizBtnClick() {
@@ -102,10 +94,6 @@
     window.location.href = `/quiz/scales/1`;
   }
 
-  function onNextLearnClick() {
-    console.log("Going to the next lesson")
-    window.location.href = '/practice'
-  }
 
   prevBtn.addEventListener('click', onPrevBtnClick);
 
