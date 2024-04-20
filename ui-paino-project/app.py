@@ -18,7 +18,8 @@ def learn_theory():  # put application's code here
 
 @app.route('/learn-scales')
 def learn_scales():  # put application's code here
-    return render_template("learn_scales.html")
+    id = request.args.get('id')
+    return render_template("learn_scales.html", id=id)
 
 @app.route('/quiz/theory')
 def quiz_theory():  # put application's code here
