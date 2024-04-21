@@ -41,13 +41,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-scales');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-scales');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer();
+    });
+});
 
 function checkAnswer() {
     const form = document.getElementById('answer-form');
@@ -70,13 +70,13 @@ function checkAnswer() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-major');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer2();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-major');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer2();
+    });
+});
 
 function checkAnswer2() {
     const form = document.getElementById('answer-form-major');
@@ -99,13 +99,13 @@ function checkAnswer2() {
 }
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-button-id2');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer3();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-button-id2');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer3();
+    });
+});
 
 function checkAnswer3() {
     console.log("in 1")
@@ -132,13 +132,13 @@ function checkAnswer3() {
 
 
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const submitButton = document.getElementById('submit-4');
-//     submitButton.addEventListener('click', function(event) {
-//         event.preventDefault();  // Prevents form submission and page reload
-//         checkAnswer4();
-//     });
-// });
+document.addEventListener("DOMContentLoaded", function() {
+    const submitButton = document.getElementById('submit-4');
+    submitButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevents form submission and page reload
+        checkAnswer4();
+    });
+});
 
 function checkAnswer4() {
     console.log("in 1")
