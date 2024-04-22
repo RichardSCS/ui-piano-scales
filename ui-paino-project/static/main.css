@@ -33,14 +33,15 @@
       }
       .quiz-title{
           margin-top: 30px;
-          font-size: 40px;
+          font-size: 25px;
           font-weight: bold;
           text-align: center;
+          color:#7D7D7D;
       }
       .instruction{
           margin-top: 50px;
-          font-size: 25px;
-          color: #7D7D7D;
+          font-size: 40px;
+          color: Black;
           text-align: center;
       }
 #piano {
@@ -148,6 +149,67 @@
     margin-top: 30px;
     margin-left: 35%;
 }
+#answer-alert{
+    min-height: 30px;
+    margin-left: 50%;
+    margin-top:15px;
+    font-weight: bold;
+    color:red;
+}
+#result-scales{
+    min-height: 30px;
+    margin-left: 43%;
+    margin-top:15px;
+    font-weight: bold;
+    color:red;
+}
+#answer-form{
+    margin-top: 40px;
+}
+  #answer-form-major fieldset,
+    #answer-form-major #submit-button-major {
 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* This ensures the legend and button text are centered */
+    }
+  #submit-button-major{
+      margin-top: 15px;
+  }
+  #answer-form-major{
+      margin-top: 30px;
+  }
 
+    /* Left-align the radio button divs */
+    #answer-form-major div {
+        text-align: left; /* Aligns radio buttons to the left */
+        padding-left: 20px; /* Adds padding for better spacing, adjust as needed */
+        margin-left:225px;
+
+    }
+
+    /* Aligns the actual input and label text inline */
+    #answer-form-major input[type="radio"],
+    #answer-form-major label {
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+    /* Margin for spacing between radio buttons */
+    #answer-form-major input[type="radio"] {
+        margin-right: 10px; /* Space between radio button and label */
+    }
+    #lower-nav1{
+        margin-top: 5px;
+        margin-left: 40%;
+    }
+    #major-nav{
+         margin-top: 5px;
+        margin-left: 40%;
+    }
+    #answer-form-id{
+        margin-top: 30px;
+    }
 
