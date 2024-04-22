@@ -212,4 +212,54 @@
     #answer-form-id{
         margin-top: 30px;
     }
+#result-4{
+    min-height: 30px;
+    margin-left: 43%;
+    margin-top:15px;
+    font-weight: bold;
+    color:red;
+}
+
+    #answer-4{
+    margin-top: 40px;
+}
+  #answer-4 fieldset,
+    #answer-4r #submit-4 {
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* This ensures the legend and button text are centered */
+    }
+  #submit-4{
+      margin-top: 15px;
+  }
+  #answer-4{
+      margin-top: 30px;
+  }
+
+    /* Left-align the radio button divs */
+    #answer-4 div {
+        text-align: left; /* Aligns radio buttons to the left */
+        padding-left: 20px; /* Adds padding for better spacing, adjust as needed */
+        margin-left:285px;
+
+    }
+
+    /* Aligns the actual input and label text inline */
+    #answer-4 input[type="radio"],
+    #answer-4 label {
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+    /* Margin for spacing between radio buttons */
+    #answer-4 input[type="radio"] {
+        margin-right: 10px; /* Space between radio button and label */
+    }
+    #scales-2-results{
+           margin-top: 5px;
+        margin-left: 40%;
+    }
 
