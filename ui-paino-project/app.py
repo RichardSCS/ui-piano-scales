@@ -4,7 +4,13 @@ from flask import Response, request, jsonify
 
 app = Flask(__name__)
 
-
+quiz_results={
+    'theory':[],
+    'scales':[],
+    'scales_major':[],
+    'scales_id':[],
+    'scales_2':[]
+}
 @app.route('/')
 def hello_world():  # put application's code here a
     return render_template("home.html")
@@ -48,6 +54,56 @@ def results():  # put application's code here
 @app.route('/practice')
 def practice():  # put application's code here
     return render_template("practice.html")
+
+@app.route('/submit-your-answer-theory', methods=['POST'])
+def submit_answer_theory():
+    print("I am clicked")
+    selected_scale = request.form.get('scales')
+    # You can add code to check the answer, save to a database, etc.
+    print(selected_scale)
+    quiz_results['theory'].append(selected_scale)
+    print(quiz_results)
+    return '',204
+@app.route('/submit-your-answer', methods=['POST'])
+def submit_answer():
+    print("I am clicked")
+    selected_scale = request.form.get('scales')
+    # You can add code to check the answer, save to a database, etc.
+    print(selected_scale)
+    quiz_results['scales'].append(selected_scale)
+    print(quiz_results)
+    return '',204
+
+@app.route('/submit-your-answer-2', methods=['POST'])
+def submit_answer_2():
+    print("I am clicked")
+    selected_scale = request.form.get('scales')
+    # You can add code to check the answer, save to a database, etc.
+    print(selected_scale)
+    quiz_results['scales_major'].append(selected_scale)
+    print(quiz_results)
+    return '',204
+
+@app.route('/submit-your-answer-3', methods=['POST'])
+def submit_answer_3():
+    print("I am clicked")
+    selected_scale = request.form.get('scales3')
+    # You can add code to check the answer, save to a database, etc.
+    print(selected_scale)
+    quiz_results['scales_id'].append(selected_scale)
+    print(quiz_results)
+    return '',204
+
+
+@app.route('/submit-your-answer-4', methods=['POST'])
+def submit_answer_4():
+    print("I am clicked")
+    selected_scale = request.form.get('scales4')
+    # You can add code to check the answer, save to a database, etc.
+    print(selected_scale)
+    quiz_results['scales_2'].append(selected_scale)
+    print(quiz_results)
+    return '',204
 
 
 if __name__ == '__main__':
