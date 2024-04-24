@@ -49,7 +49,7 @@ def quiz_scale_4():  # put application's code here
 
 @app.route('/results')
 def results():  # put application's code here
-    return render_template("results.html")
+    return render_template("results.html",quiz_results=quiz_results)
 
 @app.route('/practice')
 def practice():  # put application's code here

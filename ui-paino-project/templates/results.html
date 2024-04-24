@@ -1,11 +1,42 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="container-fluid view-page">
-        <div class="row">
-            Insert Results Here
-            <div class="result-div"></div>
-        </div>
-    <a href="/practice" class="btn">More Practice</a>
+<div class="container-fluid view-page">
+    <div class="row">
+        <h2>Theory Results</h2>
+        <ul>
+            {% for result in quiz_results.theory %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Scale Results</h2>
+        <ul>
+            {% for result in quiz_results.scales %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+       <h2>Scale Major Results</h2>
+        <ul>
+            {% for result in quiz_results.scales_major %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+     <h2>Scale Major Results</h2>
+        <ul>
+            {% for result in quiz_results.scales_id %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+     <h2>Scale Major Results</h2>
+        <ul>
+            {% for result in quiz_results.scales_2 %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Add more sections for other categories as needed -->
     </div>
+    <a href="/practice" class="btn">More Practice</a>
+</div>
 {% endblock %}
