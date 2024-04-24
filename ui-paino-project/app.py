@@ -51,4 +51,4 @@ def practice():  # put application's code here
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
