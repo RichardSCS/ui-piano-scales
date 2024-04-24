@@ -18,6 +18,23 @@
   }
   .data-display {
     margin-bottom: 20px;
+    border: 2px solid #2b2d42; /* Add solid border with specified color */
+    padding: 10px; /* Add padding to separate content from border */
+  }
+
+  .data-display img {
+    max-width: 100%; /* Ensure images stay within the border */
+  }
+  
+  #prevBtn,
+  #nextBtn {
+    background-color: #d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    margin: 5px; /* Add margin to separate buttons */
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
   }
 </style>
 </head>
@@ -34,8 +51,11 @@
 <script>
   // JSON Data
   const data = [
-    { id: 1, name: "Every key on the piano has a letter name. The first one we will learn is C.", image: "basic_theory1.jpeg", next_lesson_id:2, next_quiz_id:0 },
-    { id: 2, name: "Going from left to right, middle C is the 4th C note on the piano. C is the first note that we will play in the C major scale.", image: "basic_theory2.jpeg", next_lesson_id:0, next_quiz_id:1 }
+    { id: 1, name: "Every key on the piano has a letter name. The first one we will learn is C.", image: "media/basic_theory_1.png", next_lesson_id:2, next_quiz_id:0 },
+    { id: 2, name: "Going from left to right, middle C is the 4th C note on the piano. C is the first note that we will play in the C major scale.", image: "media/basic_theory_2.png", next_lesson_id:0, next_quiz_id:1 },
+    { id: 3, name: "Piano keys can be grouped into octaves. There are 8 white keys and 5 black keys in each octave, and 5 black keys. Each white key has a letter name from A to F. An octave always starts and ends with the same letter, like C:", image: "media/basic_theory_3.jpeg", next_lesson_id:4, next_quiz_id:0 },
+    { id: 4, name: "The black keys on the piano are called flat(♭) and sharp(#) keys. They are half a step lower for flat keys, and half a step higher for sharp keys, from their corresponding white key.", image: "media/basic_theory_4.png", next_lesson_id:5, next_quiz_id:0 },
+    { id: 5, name: "Distance between keys is measured as whole steps and half steps. Any 2 keys directly next to each other, no matter the color, are a half step away from each other. 2 of these make a whole step", image: "media/basic_theory_5.jpeg", next_lesson_id:0, next_quiz_id:0 }
   ];
 
   // DOM Elements
@@ -43,19 +63,21 @@
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
 
-  let currentIndex = 0;
+  // Retrieve the currentIndex from the URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  let currentIndex = parseInt(urlParams.get('id')) - 1;
 
   // Function to display data
   function displayData(index) {
     const currentItem = data[index];
     dataDisplay.innerHTML = `
       <p>${currentItem.name}</p>
+      <img src="/static/${currentItem.image}" alt="${currentItem.name}"/>
     `;
   }
 
   // Initial data display
   displayData(currentIndex);
-
 
   // Function to update URL
   function updateURL(id) {
@@ -64,49 +86,69 @@
   }
 
   // Event listeners for next and previous buttons
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < data.length - 1) {
-      currentIndex++;
-      displayData(currentIndex);
+  nextBtn.addEventListener('click', onNextBtnClick);
+
+  function onNextBtnClick() {
+    const newIndex = currentIndex + 1;
+    if (newIndex < data.length) {
+      console.log('current page');
+      console.log(newIndex);
+      displayData(newIndex);
       prevBtn.disabled = false;
-      updateURL(data[currentIndex].id);
+      updateURL(data[newIndex].id);
+      currentIndex = newIndex; // Update currentIndex
     }
-    if (data[currentIndex].next_quiz_id !== 0) {
+    if (data[newIndex].next_quiz_id !== 0) {
       document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
-      nextBtn.disabled = false; // Enable Next 
-      nextBtn.addEventListener('click', () => {
-        console.log("Next button clicked");
-        window.location.href = `/quiz/theory`;
-    });
+      nextBtn.disabled = false;
+      nextBtn.removeEventListener('click', onNextBtnClick);
+      nextBtn.addEventListener('click', onQuizBtnClick);
     } else {
       document.getElementById('quizMessage').innerText = "";
     }
-  });
+    if(data[newIndex].id === data.length){
+      document.getElementById('quizMessage').innerText = "Done with basic theory! Click next to start learning basic scales!"
+      nextBtn.removeEventListener('click', onNextBtnClick);
+      nextBtn.addEventListener('click', onNextLearnClick);
+    }
+    else{
+      document.getElementById('quizMessage').innerText="";
+    }
+  }
 
-  prevBtn.addEventListener('click', () => {
+  function onQuizBtnClick() {
+    console.log("Next button clicked");
+    window.location.href = `/quiz/theory`;
+  }
+
+  function onNextLearnClick() {
+    console.log("Going to the next lesson")
+    window.location.href = '/learn-scales?id=1'
+  }
+
+  prevBtn.addEventListener('click', onPrevBtnClick);
+
+  function onPrevBtnClick() {
     if (currentIndex > 0) {
       currentIndex--;
       displayData(currentIndex);
       nextBtn.disabled = false;
       updateURL(data[currentIndex].id);
+      if (currentIndex === 0) {
+        prevBtn.disabled = true;
+      }
+      if (data[currentIndex].next_quiz_id !== 0) {
+        document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
+      } else {
+        document.getElementById('quizMessage').innerText = "";
+      }
     }
-    if (currentIndex === 0) {
-      prevBtn.disabled = true;
-    }
-    if (data[currentIndex].next_quiz_id !== 0) {
-      document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
-    } else {
-      document.getElementById('quizMessage').innerText = "";
-    }
-  });
+  }
 
   // Check next_quiz_id and navigate if not zero
   if (data[currentIndex].next_quiz_id !== 0) {
     document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
-
   }
-
-
 
 </script>
 

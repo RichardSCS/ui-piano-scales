@@ -7,12 +7,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .clickable-image {
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start; /* Align items to the start */
+            margin-top: 50px;
+            height: 300px; /* Fixed height for the container */
+        }
+        .image-container a {
+            text-decoration: none;
+            color: black;
+            flex: 1; /* Take up equal space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .smaller-image img{
+            margin-top:40px;
+            margin-bottom:10px;
+            max-height:100%;
+            max-width:90%;
+        }
+
+        .text-container {
+            margin-top:30px;
+            text-align:center;
+        }
+
+        .welcome-text {
+            font-size:30px;
+        }
+
+        .col-md-4 {
+            text-align:center;
+            flex: 1; /* Make each column equally sized */
+            max-width: 33.33%; /* Ensure each column takes 1/3 of the container width */
+        }
+
+        .text-align-bottom {
+        	margin-top: 40px;
+        }
+
+        .font-color {
+        	color: #d90429;
+        }
+
+        .larger-container {
+        	/* border: 2px solid #2b2d42; */
+        	margin-top :20px;
+        }
+
+    </style>
 </head>
 <body>
-    <h2>Welcome! Today you will learn how to play a piano major scale, and start your piano playing journey. Click on a lesson to begin.</h2>
-    <a href="/learn-theory?id=1"><button>Start</button></a>
-    
-
+	<div class = "larger-container">
+	    <div class = "text-container">
+	        <p class = "welcome-text">Welcome! Today you will learn how to play a piano major scale, and start your piano playing journey. Click on a lesson to begin.</p>
+	    </div>
+	    <div class="image-container">
+	        <div class = "col-md-4">
+	            <a href="/learn-theory?id=1" class="clickable-image">
+	                <img src="/static/media/basic_theory.jpeg" alt="basic_theory_link">
+	                <p class = "font-color">Basic Theory</p>
+	            </a>
+	        </div>
+	        <div class = "col-md-4">
+	            <a href="/learn-scales?id=1" class="clickable-image smaller-image">
+	                <img src="/static/media/basic_scales.gif" alt="basic_scales_link">
+	                <p class = "font-color">Basic Scales</p>
+	            </a>
+	        </div>
+	        <div class = "col-md-4">
+	            <a href="/practice" class="clickable-image smaller-image">
+	                <img src="/static/media/practice.jpeg" alt="practice_link">
+	                <p class = "text-align-bottom font-color">Practice</p>
+	            </a>
+	        </div>
+	    </div>
+	</div>
 </body>
 </html>
 
