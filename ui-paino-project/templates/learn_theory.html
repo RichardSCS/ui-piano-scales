@@ -10,7 +10,7 @@
 <title>Basic Theory</title>
 <style>
   /* CSS Styles */
-  .container-theory {
+  .lesson {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
@@ -40,13 +40,17 @@
 </head>
 <body>
 
-<div class="container container-theory">
+<div class="container lesson">
   <h1>Basic Theory</h1>
   <div class="data-display"></div>
   <button id="prevBtn" disabled>Previous</button>
   <button id="nextBtn">Next</button>
   <p id="quizMessage"></p>
+
 </div>
+  <div class="row">
+      {% include 'piano.html' %}
+  </div>
 
 <script>
   // JSON Data
