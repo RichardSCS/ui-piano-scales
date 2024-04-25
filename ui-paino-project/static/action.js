@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Import the template
+    const template = document.getElementById('piano-template').content.cloneNode(true);
+
+    // Append the template to the piano-container div
+    document.getElementById('piano-container').appendChild(template);
+
+    // Attach event listeners to keys
+    document.querySelectorAll('.key').forEach(key => {
+        key.addEventListener('mousedown', () => playNote(key.id));
+    });
+});
+
+function playNote(note) {
+    const audio = new Audio(`/static/media/sounds/${note}.mp3`); // Ensure you have .wav files named as notes (C.wav, C#.wav, etc.)
+    audio.play();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
     // Get the current page URL
     var url = window.location.pathname;
     console.log("YELLO")
@@ -15,22 +33,62 @@ document.addEventListener("DOMContentLoaded", function() {
             key.addEventListener("click", function() {
                  console.log("i got clicked")
                  if (key.getAttribute('data-note') === "C4") {
+
                     answerAlert.textContent = "Middle C was clicked!";
+                    answerAlert.style.color="green";
                 } else {
                     answerAlert.textContent = "Try again!";
                 }
+                 console.log(key.getAttribute('data-node'))
+                 returnAnswerTheory(key.getAttribute('data-note'))
             });
         });
+
     }
 });
 
+function returnAnswerTheory(answer){
+     fetch('/submit-your-answer-theory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'scales=' + encodeURIComponent(answer)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Handle any response from the server here
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-scales');
+
     submitButton.addEventListener('click', function(event) {
         event.preventDefault();  // Prevents form submission and page reload
         checkAnswer();
+        console.log("I got clicked here ")
     });
 });
+
+function returnAnswer(answer){
+     fetch('/submit-your-answer', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'scales=' + encodeURIComponent(answer)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Handle any response from the server here
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+};
+
 
 function checkAnswer() {
     const form = document.getElementById('answer-form');
@@ -50,6 +108,8 @@ function checkAnswer() {
         resultDiv.textContent = 'Incorrect, please try again.';
         resultDiv.style.color = 'red';
     }
+    returnAnswer(selectedOption.value)
+
 }
 
 
@@ -79,7 +139,24 @@ function checkAnswer2() {
         resultDiv.textContent = 'Incorrect, please try again.';
         resultDiv.style.color = 'red';
     }
+    returnAnswer2(selectedOption.value)
 }
+
+function returnAnswer2(answer){
+     fetch('/submit-your-answer-2', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'scales=' + encodeURIComponent(answer)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Handle any response from the server here
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+};
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -111,7 +188,25 @@ function checkAnswer3() {
         resultDiv.textContent = 'Incorrect, please try again.';
         resultDiv.style.color = 'red';
     }
+    returnAnswer3(selectedOption.value)
 }
+
+function returnAnswer3(answer){
+     fetch('/submit-your-answer-3', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'scales3=' + encodeURIComponent(answer)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Handle any response from the server here
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+};
+
 
 
 
@@ -144,7 +239,26 @@ function checkAnswer4() {
         resultDiv.textContent = 'Incorrect, please try again.';
         resultDiv.style.color = 'red';
     }
+    returnAnswer4(selectedOption.value)
 }
+
+function returnAnswer4(answer){
+     fetch('/submit-your-answer-4', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'scales4=' + encodeURIComponent(answer)
+    })
+    .then(response => response.text())
+    .then(data => {
+        // Handle any response from the server here
+        console.log(data);
+    })
+    .catch(error => console.error('Error:', error));
+};
+
+
 
 
 
