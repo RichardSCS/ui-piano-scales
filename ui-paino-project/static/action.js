@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.key').forEach(key => {
-        console.log(key);
-        key.addEventListener('mousedown', () => playNote(key.getAttribute('data-note')));
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
     // Import the template
     const template = document.getElementById('piano-template').content.cloneNode(true);
 
