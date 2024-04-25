@@ -1,4 +1,4 @@
-#piano {
+.piano {
     margin-top: 100px;
     display: flex;
     align-items: flex-end;
@@ -6,16 +6,6 @@
     height: 200px; /* Adjust as needed */
     width: 100%; /* Adjust as needed */
 }
-
-#piano2 {
-    margin-top: 100px;
-    display: flex;
-    align-items: flex-end;
-    position: relative; /* Ensures absolute positioning within */
-    height: 200px; /* Adjust as needed */
-    width: 100%; /* Adjust as needed */
-}
-
 
 .key {
     border: 1px solid #000;
