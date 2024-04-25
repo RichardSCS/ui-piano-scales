@@ -1,145 +1,46 @@
-
-            body{
-                font-family: Lato;
-
-            }
-            #nav-outer{
-                margin-left:10%;
-            }
-
-            .navbar-brand{
-                margin-left: -15px;
-            }
-            #banner-wel{
-                margin-left: 30px;
-                color:#7D7D7D;
-
-            }
-                #banner-lower{
-        color: #7D7D7D;
-        font-size: 14px;
-        margin-left: 70px;
-
-    }
-      #banner-lower2{
-        color: #7D7D7D;
-        font-size: 14px;
-        margin-left: 14px;
-
-    }
-      .part2{
-          height: 50%;
-          margin-top: -12px;
-      }
-      .quiz-title{
-          margin-top: 30px;
-          font-size: 25px;
-          font-weight: bold;
-          text-align: center;
-          color:#7D7D7D;
-      }
-      .instruction{
-          margin-top: 50px;
-          font-size: 40px;
-          color: Black;
-          text-align: center;
-      }
-#piano {
-    margin-top: 100px;
-    display: flex;
-    align-items: flex-end;
-    position: relative; /* Ensures absolute positioning within */
-    height: 200px; /* Adjust as needed */
-    width: 100%; /* Adjust as needed */
+body{
+    font-family: Lato;
+}
+#nav-outer{
+    margin-left:10%;
 }
 
-#piano2 {
-    margin-top: 100px;
-    display: flex;
-    align-items: flex-end;
-    position: relative; /* Ensures absolute positioning within */
-    height: 200px; /* Adjust as needed */
-    width: 100%; /* Adjust as needed */
+.navbar-brand{
+    margin-left: -15px;
 }
-
-
-.key {
-    border: 1px solid #000;
-    height: 200px; /* Increased for visual effect */
-    width: 40px; /* Adjust based on actual piano key width */
-    margin: 0 2px;
-    position: relative; /* Allows for stacking context */
-    display: inline-block;
-}
-
-.white {
-    background: #fff;
-    z-index: 1;
+#banner-wel{
+    margin-left: 30px;
+    color:#7D7D7D;
 
 }
-.white:hover{
-    background-color: lightgray;
+#banner-lower{
+    color: #7D7D7D;
+    font-size: 14px;
+    margin-left: 70px;
+
 }
-
-.black {
-    background: #000;
-    width: 14px;
-    height: 140px; /* Shorter than white keys */
-    position: absolute;
-    z-index: 2;
-    top: 0;
+#banner-lower2{
+    color: #7D7D7D;
+    font-size: 14px;
+    margin-left: 14px;
 }
-.black:hover{
-    background-color: dimgray;
+.part2{
+  height: 50%;
+  margin-top: -12px;
 }
-
-/* Individual adjustments for each black key in a typical octave */
-.black.a-sharp-0 { left: 27px; }
-
-.black.c-sharp { left: 77px; }
-.black.d-sharp { left: 103px; }
-.black.f-sharp { left: 153px; }
-.black.g-sharp { left: 175px; }
-.black.a-sharp { left: 200px; }
-
-/* Positioning for black keys in Octave 2  */
-.black.c-sharp-2 { left: 248px; }
-.black.d-sharp-2 { left: 273px; }
-.black.f-sharp-2 { left: 321px; }
-.black.g-sharp-2 { left: 347px; }
-.black.a-sharp-2 { left: 371px; }
-
-/* Octave 3 */
-.black.c-sharp-3 { left: 420px; }
-.black.d-sharp-3 { left: 445px; }
-.black.f-sharp-3 { left: 493px; }
-.black.g-sharp-3 { left: 518px; }
-.black.a-sharp-3 { left: 542px; }
-
-/* Octave 4*/
-.black.c-sharp-4 { left: 590px; }
-.black.d-sharp-4 { left:615px; }
-.black.f-sharp-4 { left: 663px; }
-.black.g-sharp-4 { left: 688px; }
-.black.a-sharp-4 { left: 713px; }
-
-.black.c-sharp-5 { left: 761px; }
-.black.d-sharp-5 { left: 786px; }
-.black.f-sharp-5 { left: 835px; }
-.black.g-sharp-5 { left: 860px; }
-.black.a-sharp-5 { left: 884px; }
-
-.black.c-sharp-6 { left: 932px; }
-.black.d-sharp-6 { left: 957px; }
-.black.f-sharp-6 { left: 1007px; }
-.black.g-sharp-6 { left: 1030px; }
-.black.a-sharp-6 { left: 1054px; }
-
-.black.c-sharp-7 { left: 1103px; }
-.black.d-sharp-7 { left: 1128px; }
-.black.f-sharp-7 { left: 1177px; }
-.black.g-sharp-7 { left: 1201px; }
-.black.a-sharp-7 { left: 1226px; }
+.quiz-title{
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color:#7D7D7D;
+}
+.instruction{
+  margin-top: 50px;
+  font-size: 40px;
+  color: Black;
+  text-align: center;
+}
 
 .answer-form{
     margin-top: 80px;
@@ -166,50 +67,76 @@
 #answer-form{
     margin-top: 40px;
 }
-  #answer-form-major fieldset,
-    #answer-form-major #submit-button-major {
+#answer-form-major fieldset,
+#answer-form-major #submit-button-major {
 
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center; /* This ensures the legend and button text are centered */
-    }
-  #submit-button-major{
-      margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* This ensures the legend and button text are centered */
+}
+#submit-button-major{
+  margin-top: 15px;
+}
+#answer-form-major{
+  margin-top: 30px;
+}
+
+/* Left-align the radio button divs */
+#answer-form-major div {
+    text-align: left; /* Aligns radio buttons to the left */
+    padding-left: 20px; /* Adds padding for better spacing, adjust as needed */
+    margin-left:225px;
+
+}
+
+/* Aligns the actual input and label text inline */
+#answer-form-major input[type="radio"],
+#answer-form-major label {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+/* Margin for spacing between radio buttons */
+#answer-form-major input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+#lower-nav1{
+    margin-top: 5px;
+    margin-left: 40%;
+}
+#major-nav{
+     margin-top: 5px;
+    margin-left: 40%;
+}
+#answer-form-id{
+    margin-top: 30px;
+}
+/* CSS Styles */
+.lesson {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.data-display {
+    margin-bottom: 20px;
+    border: 2px solid #2b2d42; /* Add solid border with specified color */
+    padding: 10px; /* Add padding to separate content from border */
+}
+
+.data-display img {
+    max-width: 100%; /* Ensure images stay within the border */
+}
+
+  #prevBtn,
+  #nextBtn {
+    background-color: #d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    margin: 5px; /* Add margin to separate buttons */
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
   }
-  #answer-form-major{
-      margin-top: 30px;
-  }
-
-    /* Left-align the radio button divs */
-    #answer-form-major div {
-        text-align: left; /* Aligns radio buttons to the left */
-        padding-left: 20px; /* Adds padding for better spacing, adjust as needed */
-        margin-left:225px;
-
-    }
-
-    /* Aligns the actual input and label text inline */
-    #answer-form-major input[type="radio"],
-    #answer-form-major label {
-        display: inline-block;
-        vertical-align: middle;
-
-    }
-
-    /* Margin for spacing between radio buttons */
-    #answer-form-major input[type="radio"] {
-        margin-right: 10px; /* Space between radio button and label */
-    }
-    #lower-nav1{
-        margin-top: 5px;
-        margin-left: 40%;
-    }
-    #major-nav{
-         margin-top: 5px;
-        margin-left: 40%;
-    }
-    #answer-form-id{
-        margin-top: 30px;
-    }
-
