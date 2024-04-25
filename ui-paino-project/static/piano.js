@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.key').forEach(key => {
-        console.log(key);
         key.addEventListener('mousedown', () => playNote(key.getAttribute('data-note')));
     });
 });

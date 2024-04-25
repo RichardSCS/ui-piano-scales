@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (url.endsWith("quiz/theory")) {
         console.log("I'm in the file ")
         // Code specific to quiz-theory.html
-        var keys = document.querySelectorAll("#piano .key");
+        var keys = document.querySelectorAll(".piano .key");
         var answerAlert = document.getElementById("answer-alert");
 
         keys.forEach(function(key) {
