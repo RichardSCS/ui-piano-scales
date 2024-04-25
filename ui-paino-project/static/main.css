@@ -234,4 +234,10 @@ body{
            margin-top: 5px;
         margin-left: 43%;
     }
+.correct {
+    color: green;
+}
+.incorrect {
+    color: red;
+}
 

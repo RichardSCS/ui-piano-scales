@@ -3,38 +3,39 @@
 {% block content %}
 <div class="container-fluid view-page">
     <div class="row">
-        <h2>Theory Results</h2>
+        <h2>Theory Quiz Results</h2>
         <ul>
-            {% for result in quiz_results.theory %}
-                <li>{{ result }}</li>
-            {% endfor %}
+            {% if quiz_results.theory %}
+            <li class="correct">Correct</li>
+            {% else %}
+                <li class="incorrect">Incorrect</li>
+            {% endif %}
         </ul>
 
-        <h2>Scale Results</h2>
+        <h2>Scales Quiz Results</h2>
         <ul>
-            {% for result in quiz_results.scales %}
-                <li>{{ result }}</li>
-            {% endfor %}
+            {% if quiz_results.scales %}
+                <li class="correct">Correct</li>
+            {% else %}
+                <li class="incorrect">Incorrect</li>
+            {% endif %}
+            {% if quiz_results.scales_major %}
+            <li class="correct">Correct</li>
+            {% else %}
+                <li class="incorrect">Incorrect</li>
+            {% endif %}
+            {% if quiz_results.scales_id %}
+            <li class="correct">Correct</li>
+            {% else %}
+                <li class="incorrect">Incorrect</li>
+            {% endif %}
+            {% if quiz_results.scales_2 %}
+            <li class="correct">Correct</li>
+            {% else %}
+                <li class="incorrect">Incorrect</li>
+            {% endif %}
         </ul>
-       <h2>Scale Major Results</h2>
-        <ul>
-            {% for result in quiz_results.scales_major %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-     <h2>Scale Major Results</h2>
-        <ul>
-            {% for result in quiz_results.scales_id %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-     <h2>Scale Major Results</h2>
-        <ul>
-            {% for result in quiz_results.scales_2 %}
-                <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
-
+        <h3>Total Correct: {{total_correct}}</h3>
         <!-- Add more sections for other categories as needed -->
     </div>
     <a href="/practice" class="btn">More Practice</a>

@@ -5,12 +5,23 @@ from flask import Response, request, jsonify
 app = Flask(__name__)
 
 quiz_results={
-    'theory':[],
-    'scales':[],
-    'scales_major':[],
-    'scales_id':[],
-    'scales_2':[]
+    'theory'        : False,
+    'scales'        : False,
+    'scales_major'  : False,
+    'scales_id'     : False,
+    'scales_2'      : False
 }
+
+total_correct = 0
+
+def CalcCorrect():
+    global total_correct
+    correct = 0
+    for answer in quiz_results:
+        if quiz_results[answer] == True:
+            correct += 1
+    total_correct = correct
+
 @app.route('/')
 def hello_world():  # put application's code here a
     return render_template("home.html")
@@ -49,7 +60,7 @@ def quiz_scale_4():  # put application's code here
 
 @app.route('/results')
 def results():  # put application's code here
-    return render_template("results.html",quiz_results=quiz_results)
+    return render_template("results.html",quiz_results=quiz_results, total_correct=total_correct)
 
 @app.route('/practice')
 def practice():  # put application's code here
@@ -57,52 +68,74 @@ def practice():  # put application's code here
 
 @app.route('/submit-your-answer-theory', methods=['POST'])
 def submit_answer_theory():
-    print("I am clicked")
+    #print("I am clicked 1")
     selected_scale = request.form.get('scales')
     # You can add code to check the answer, save to a database, etc.
     print(selected_scale)
-    quiz_results['theory'].append(selected_scale)
-    print(quiz_results)
+    if selected_scale == "C4":
+        quiz_results['theory'] = True
+        print("True")
+    else:
+        quiz_results['theory'] = False
+        print("False")
+    #print(quiz_results)
+    CalcCorrect()
     return '',204
 @app.route('/submit-your-answer', methods=['POST'])
 def submit_answer():
-    print("I am clicked")
+    #print("I am clicked 2")
     selected_scale = request.form.get('scales')
     # You can add code to check the answer, save to a database, etc.
     print(selected_scale)
-    quiz_results['scales'].append(selected_scale)
-    print(quiz_results)
+    if selected_scale == 'A major':
+        quiz_results['scales'] = True
+    else:
+        quiz_results['scales'] = False
+    #print(quiz_results)
+    CalcCorrect()
     return '',204
 
 @app.route('/submit-your-answer-2', methods=['POST'])
 def submit_answer_2():
-    print("I am clicked")
+    #print("I am clicked 3")
     selected_scale = request.form.get('scales')
     # You can add code to check the answer, save to a database, etc.
     print(selected_scale)
-    quiz_results['scales_major'].append(selected_scale)
-    print(quiz_results)
+    if selected_scale == "B major":
+        quiz_results['scales_major'] = True
+    else:
+        quiz_results['scales_major'] = False
+    #print(quiz_results)
+    CalcCorrect()
     return '',204
 
 @app.route('/submit-your-answer-3', methods=['POST'])
 def submit_answer_3():
-    print("I am clicked")
+    #print("I am clicked 4")
     selected_scale = request.form.get('scales3')
     # You can add code to check the answer, save to a database, etc.
     print(selected_scale)
-    quiz_results['scales_id'].append(selected_scale)
-    print(quiz_results)
+    if selected_scale == 'D flat major':
+        quiz_results['scales_id'] = True
+    else:
+        quiz_results['scales_id'] = False
+    #print(quiz_results)
+    CalcCorrect()
     return '',204
 
 
 @app.route('/submit-your-answer-4', methods=['POST'])
 def submit_answer_4():
-    print("I am clicked")
+    #print("I am clicked 5")
     selected_scale = request.form.get('scales4')
     # You can add code to check the answer, save to a database, etc.
     print(selected_scale)
-    quiz_results['scales_2'].append(selected_scale)
-    print(quiz_results)
+    if selected_scale == 'G':
+        quiz_results['scales_2'] = True
+    else:
+        quiz_results['scales_2'] = False
+    #print(quiz_results)
+    CalcCorrect()
     return '',204
 
 
