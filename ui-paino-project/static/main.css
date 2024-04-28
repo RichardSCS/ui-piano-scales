@@ -240,4 +240,8 @@ body{
 .incorrect {
     color: red;
 }
+.active-link {
 
+    text-decoration: underline;
+    font-weight: bold;  /* Optional: to make the active link stand out */
+}
