@@ -109,6 +109,10 @@ body{
 #major-nav{
      margin-top: 5px;
     margin-left: 40%;
+    display: flex;
+    justify-content: center; /* Centers the buttons in the row */
+    align-items: center;
+
 }
 #answer-form-id{
     margin-top: 30px;
@@ -247,7 +251,7 @@ body{
 }
 .button-std{
     display: inline-block;
-    background-color: #d90429; /* Set background color for buttons */
+    background-color: #7D7D7D;/*#d90429; /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
@@ -257,8 +261,14 @@ body{
      flex-grow: 0;
 
 }
+.but-con{
+    padding-left: 45%;
+}
 .button-div {
     display: flex;
     justify-content: center; /* Center children horizontally */
     align-items: center; /* Center children vertically */
+}
+.scalesimage{
+    margin-top: -10px;
 }
