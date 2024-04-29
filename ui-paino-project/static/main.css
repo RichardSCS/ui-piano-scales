@@ -245,3 +245,20 @@ body{
     text-decoration: underline;
     font-weight: bold;  /* Optional: to make the active link stand out */
 }
+.button-std{
+    display: inline-block;
+    background-color: #d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    margin: 5px; /* Add margin to separate buttons */
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+
+}
+.button-div {
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+}
