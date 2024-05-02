@@ -136,7 +136,7 @@ body{
 
   #prevBtn,
   #nextBtn {
-    background-color: #7D7D7D;  /* Set background color for buttons */
+    background-color: #203354;  /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
@@ -251,7 +251,7 @@ body{
 }
 .button-std{
     display: inline-block;
-    background-color: #7D7D7D;/*#d90429; /* Set background color for buttons */
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
