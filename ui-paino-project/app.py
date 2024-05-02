@@ -12,6 +12,14 @@ quiz_results={
     'scales_2'      : False
 }
 
+quiz_unlock = {
+    'theory'       : True,
+    'scales'       : True,
+    'scales_major' : True,
+    'scales_id'    : True,
+    'scales_2'     : True
+}
+
 total_correct = 0
 
 def CalcCorrect():
