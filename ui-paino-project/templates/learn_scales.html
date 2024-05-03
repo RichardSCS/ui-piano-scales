@@ -63,6 +63,9 @@
   // Retrieve the currentIndex from the URL parameter
   const urlParams = new URLSearchParams(window.location.search);
   let currentIndex = parseInt(urlParams.get('id')) - 1;
+  if (isNaN(currentIndex) || currentIndex < 0) {
+    currentIndex = 0;
+  }
 
   // Function to display data
   function displayData(index) {
@@ -71,6 +74,16 @@
       <p>${currentItem.name}</p>
       <img src="/static/${currentItem.image}" alt="${currentItem.name}"/>
     `;
+
+    // Disable or hide the "Previous" button based on currentItem's ID
+    if (currentItem.id === 1) {
+      //prevBtn.disabled = true;
+      // Alternatively, you can hide the button
+      prevBtn.style.visibility = 'hidden';
+    } 
+    else {
+      prevBtn.style.visibility = 'visible';
+    }
   }
 
   // Initial data display
@@ -86,16 +99,14 @@
   nextBtn.addEventListener('click', onNextBtnClick);
 
   function onNextBtnClick() {
-    const newIndex = currentIndex + 1;
-    if (newIndex < data.length) {
-      console.log('current page');
-      console.log(newIndex);
-      displayData(newIndex);
+    nextBtn.removeEventListener('click', onQuizBtnClick);
+    if (currentIndex < data.length - 1 && data[currentIndex].next_quiz_id === 0) {
+      currentIndex = currentIndex + 1;
+      displayData(currentIndex);
       prevBtn.disabled = false;
-      updateURL(data[newIndex].id);
-      currentIndex = newIndex; // Update currentIndex
+      updateURL(data[currentIndex].id);
     }
-    if (data[newIndex].next_quiz_id !== 0) {
+    if (data[currentIndex].next_quiz_id !== 0) {
       document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
       nextBtn.disabled = false;
       nextBtn.removeEventListener('click', onNextBtnClick);
@@ -114,6 +125,8 @@
   prevBtn.addEventListener('click', onPrevBtnClick);
 
   function onPrevBtnClick() {
+    nextBtn.addEventListener('click', onNextBtnClick);
+    nextBtn.removeEventListener('click', onQuizBtnClick);
     if (currentIndex > 0) {
       currentIndex--;
       displayData(currentIndex);
