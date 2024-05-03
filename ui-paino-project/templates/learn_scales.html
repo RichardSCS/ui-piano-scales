@@ -22,15 +22,27 @@
     border: 2px solid #2b2d42; /* Add solid border with specified color */
     padding: 10px; /* Add padding to separate content from border */
   }
-  #prevBtn,
+  #prevBtn
+  {
+    background-color:#203354; /*#d9042Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    {#margin: 5px; /* Add margin to separate buttons */#}
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+      {#margin-left: 0px;#}
+
+  }
   #nextBtn {
     background-color:#203354; /*#d9042Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
-    margin: 5px; /* Add margin to separate buttons */
+    {#margin: 5px; /* Add margin to separate buttons */#}
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
+      {#margin-left: 380px;#}
   }
 </style>
 </head>
@@ -96,7 +108,7 @@
       currentIndex = newIndex; // Update currentIndex
     }
     if (data[newIndex].next_quiz_id !== 0) {
-      document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
+      document.getElementById('quizMessage').innerText = "";
       nextBtn.disabled = false;
       nextBtn.removeEventListener('click', onNextBtnClick);
       nextBtn.addEventListener('click', onQuizBtnClick);
