@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the current page URL
     var url = window.location.pathname;
-    console.log("YELLO")
     console.log(url)
 
     // Check if it is the quiz-theory.html page
@@ -82,17 +81,19 @@ function checkAnswer() {
         return;
     }
 
+    $('#submit-button-scales').removeClass("button-std").addClass("disabled-button-std");
+    $('#submit-button-scales').prop("disabled", true);
     if (selectedOption.value === 'A major') {
         resultDiv.textContent = 'Correct! Well done.';
         resultDiv.style.color = 'green';
     } else {
-        resultDiv.textContent = 'Incorrect, please try again.';
+        resultDiv.textContent = 'Incorrect.';
         resultDiv.style.color = 'red';
+
     }
     returnAnswer(selectedOption.value)
 
 }
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-major');
@@ -113,12 +114,15 @@ function checkAnswer2() {
         return;
     }
 
+    $('#submit-button-major').removeClass("button-std").addClass("disabled-button-std");
+    $('#submit-button-major').prop("disabled", true);
     if (selectedOption.value === 'B major') {
         resultDiv.textContent = 'Correct! Well done.';
         resultDiv.style.color = 'green';
     } else {
-        resultDiv.textContent = 'Incorrect, please try again.';
+        resultDiv.textContent = 'Incorrect.';
         resultDiv.style.color = 'red';
+
     }
     returnAnswer2(selectedOption.value)
 }
@@ -138,7 +142,6 @@ function returnAnswer2(answer){
     })
     .catch(error => console.error('Error:', error));
 };
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-id2');
@@ -162,12 +165,15 @@ function checkAnswer3() {
         return;
     }
 
+    $('#submit-button-id2').removeClass("button-std").addClass("disabled-button-std");
+    $('#submit-button-id2').prop("disabled", true);
     if (selectedOption.value === 'D flat major') {
         resultDiv.textContent = 'Correct! Well done.';
         resultDiv.style.color = 'green';
     } else {
-        resultDiv.textContent = 'Incorrect, please try again.';
+        resultDiv.textContent = 'Incorrect.';
         resultDiv.style.color = 'red';
+
     }
     returnAnswer3(selectedOption.value)
 }
@@ -187,9 +193,6 @@ function returnAnswer3(answer){
     })
     .catch(error => console.error('Error:', error));
 };
-
-
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-4');
@@ -213,12 +216,15 @@ function checkAnswer4() {
         return;
     }
 
+    $('#submit-4').removeClass("button-std").addClass("disabled-button-std");
+    $('#submit-4').prop("disabled", true);
     if (selectedOption.value === 'G') {
         resultDiv.textContent = 'Correct! Well done.';
         resultDiv.style.color = 'green';
     } else {
-        resultDiv.textContent = 'Incorrect, please try again.';
+        resultDiv.textContent = 'Incorrect.';
         resultDiv.style.color = 'red';
+
     }
     returnAnswer4(selectedOption.value)
 }
@@ -238,13 +244,3 @@ function returnAnswer4(answer){
     })
     .catch(error => console.error('Error:', error));
 };
-
-
-
-
-
-
-
-
-
-

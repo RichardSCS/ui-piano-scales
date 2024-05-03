@@ -35,7 +35,7 @@
 </div>
         </fieldset>
 
-        <button id="submit-4" class= "button-std" type="button">Submit</button>
+        <button id="submit-4" {% if lock %}class="disabled-button-std"{%else%}class="button-std"{%endif%} type="button">Submit</button>
 
 
     </form>

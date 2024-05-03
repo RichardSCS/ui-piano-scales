@@ -139,7 +139,7 @@ body{
     background-color: #7D7D7D;  /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
-    padding: 10px 20px; /* Add padding to buttons */
+    padding: 10px 10px; /* Add padding to buttons */
     margin: 5px; /* Add margin to separate buttons */
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
@@ -253,13 +253,23 @@ body{
     display: inline-block;
     background-color: #7D7D7D;/*#d90429; /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
-    border: none; /* Remove default button border */
-    padding: 10px 20px; /* Add padding to buttons */
+    border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+    padding: 10px 10px; /* Add padding to buttons */
     margin: 5px; /* Add margin to separate buttons */
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
-     flex-grow: 0;
+    flex-grow: 0;
 
+}
+.disabled-button-std {
+    display: inline-block;
+    background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+    color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+    padding: 10px 10px; /* Add padding to buttons */
+    margin: 5px; /* Add margin to separate buttons */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    flex-grow: 0;
 }
 .but-con{
     padding-left: 45%;
