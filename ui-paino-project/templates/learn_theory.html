@@ -81,7 +81,7 @@ function onNextBtnClick() {
     nextBtn.removeEventListener('click', onNextBtnClick);
     nextBtn.addEventListener('click', onQuizBtnClick);
   } else if (data[currentIndex].id === data.length) {
-    document.getElementById('quizMessage').innerText = "Done with basic theory! Click next to start learning basic scales!";
+    document.getElementById('quizMessage').innerText = "";
     nextBtn.removeEventListener('click', onNextBtnClick);
     nextBtn.addEventListener('click', onNextLearnClick);
   } else {

@@ -134,13 +134,24 @@ body{
     max-width: 100%; /* Ensure images stay within the border */
 }
 
-  #prevBtn,
-  #nextBtn {
-    background-color: #7D7D7D;  /* Set background color for buttons */
+  #prevBtn
+  {
+    background-color: #203354;  /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
-    margin: 5px; /* Add margin to separate buttons */
+    /*margin: 10px; !* Add margin to separate buttons *!*/
+    margin-left: 0px;
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+  }
+  #nextBtn {
+    background-color: #203354;  /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 10px; !* Add margin to separate buttons *!*/
+    margin-left: 380px;
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
   }
@@ -251,7 +262,7 @@ body{
 }
 .button-std{
     display: inline-block;
-    background-color: #7D7D7D;/*#d90429; /* Set background color for buttons */
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
     padding: 10px 20px; /* Add padding to buttons */
@@ -260,7 +271,53 @@ body{
     border-radius: 5px; /* Add border-radius for rounded corners */
      flex-grow: 0;
 
+
 }
+
+.button-prev{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    flex-grow: 0;
+    margin-right: -250px;
+
+
+}
+.button-nxt{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: 457px;
+
+
+}
+.button-nxt-2{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: -20px;
+    margin-top: 2px;
+    margin-bottom: -90px;
+
+}
+
 .but-con{
     padding-left: 45%;
 }
@@ -268,6 +325,7 @@ body{
     display: flex;
     justify-content: center; /* Center children horizontally */
     align-items: center; /* Center children vertically */
+    margin-left: 15px;
 }
 .scalesimage{
     margin-top: -10px;
