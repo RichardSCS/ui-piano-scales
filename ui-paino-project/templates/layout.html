@@ -40,13 +40,12 @@
               <div>
                 <a id="banner-lower" class="navbar-brand {{ 'active-link' if request.path.startswith('/learn-theory') }}" href="/learn-theory?id=1"> Basic Theory</a>
 
+                  <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path == '/quiz/theory' }}" href="/quiz/theory"> Theory Quiz</a>
                 <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path.startswith('/learn-scales') }}"  href="/learn-scales?id=1"> Scales</a>
 
+                    <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path.startswith('/quiz/scales') }}" href="/quiz/scales/1"> Scales Quiz</a>
                   <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path == '/practice' }}" href="/practice"> Practice</a>
 
-                  <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path == '/quiz/theory' }}" href="/quiz/theory"> Theory Quiz</a>
-
-                  <a id="banner-lower2" class="navbar-brand {{ 'active-link' if request.path.startswith('/quiz/scales') }}" href="/quiz/scales/1"> Scales Quiz</a>
 
 
               </div>

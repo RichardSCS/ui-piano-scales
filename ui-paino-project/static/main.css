@@ -311,3 +311,53 @@ body{
     justify-content: center;
     margin-top: 20px; /* Adjust margin as needed */
 }
+.piano-1{
+    margin-top:-120px;
+}
+.piano-1{
+    margin-top:-40px;
+}
+
+.button-prev{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    flex-grow: 0;
+    margin-right: -250px;
+
+
+}
+.button-nxt{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: 457px;
+
+
+}
+.button-nxt-2{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: -20px;
+    margin-top: 2px;
+    margin-bottom: -90px;
+
+}
