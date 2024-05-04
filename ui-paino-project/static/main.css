@@ -135,7 +135,8 @@ body{
 }
 
   #prevBtn,
-  #nextBtn {
+  #nextBtn,
+  #demoButton{
     background-color: #7D7D7D;  /* Set background color for buttons */
     color: #edf2f4; /* Set text color for buttons */
     border: none; /* Remove default button border */
