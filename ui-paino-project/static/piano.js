@@ -12,7 +12,7 @@ function playNote(note) {
     audio.play();
 }
 
-function playDemo(noteList){
+function playDemo(noteList, delay=500){
     const buttonElement = document.querySelector('#demoButton');
     buttonElement.disabled = true;
     let notes = noteList.split(',');
@@ -24,7 +24,7 @@ function playDemo(noteList){
             if(note !== 'pause'){
                 keyElement.classList.add('active');
             }
-            playNoteWithDelay(note, 500).then(() => {
+            playNoteWithDelay(note, delay).then(() => {
                 if(note !== 'pause') {
                     keyElement.classList.remove('active');
                 }
