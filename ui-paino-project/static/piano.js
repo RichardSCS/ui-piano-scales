@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function playNote(note) {
+    if(note==='pause'){
+        return;
+    }
     const audio = new Audio(`/static/media/sounds/${note}.mp3`); // Ensure you have .wav files named as notes (C.wav, C#.wav, etc.)
     audio.play();
 }
@@ -18,10 +21,13 @@ function playDemo(noteList){
         if (index < notes.length) {
             const note = notes[index].trim();
             const keyElement = document.querySelector(`[data-note="${note}"]`);
-            console.log(keyElement);
-            keyElement.classList.add('active');
+            if(note !== 'pause'){
+                keyElement.classList.add('active');
+            }
             playNoteWithDelay(note, 500).then(() => {
-                keyElement.classList.remove('active');
+                if(note !== 'pause') {
+                    keyElement.classList.remove('active');
+                }
                 playSequentially(index + 1);
                 if (index === notes.length - 1) {
                     buttonElement.disabled = false;

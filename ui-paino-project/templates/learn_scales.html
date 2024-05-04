@@ -55,6 +55,9 @@
   <button id="nextBtn">Next</button>
   <p id="quizMessage"></p>
 </div>
+<div class="center-button-container">
+    <button id="demoButton">Play Demo</button>
+</div>
 <div class="row">
     {% include 'piano.html' %}
 </div>
@@ -62,15 +65,16 @@
 <script>
   // JSON Data
   const data = [
-    { id: 1, name: "Now we are ready to learn scales. A scale starts with one key, and ends on the same key but one octave higher. This scale starts and ends with C:", image: "media/basic_scales_1.png", next_lesson_id:2, next_quiz_id:0 },
-    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.jpeg", next_lesson_id:0, next_quiz_id:0 },
-    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.png", next_lesson_id:4, next_quiz_id:1 }
+    { id: 1, name: "Now we are ready to learn scales. A scale starts with one key, and ends on the same key but one octave higher. This scale starts and ends with C:", image: "media/basic_scales_1.png", next_lesson_id:2, next_quiz_id:0, demoNotes: "C4,D4,E4,F4,G4,A4,B4,C5" },
+    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.jpeg", next_lesson_id:0, next_quiz_id:0, demoNotes: "A3,B3,CSharp4,D4,E4,FSharp4,GSharp4,A4" },
+    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.png", next_lesson_id:4, next_quiz_id:1, demoNotes: "D4,E4,FSharp4,G4,A4,B4,CSharp5,D5" }
   ];
 
   // DOM Elements
   const dataDisplay = document.querySelector('.data-display');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const demoBtn = document.getElementById('demoButton');
 
   // Retrieve the currentIndex from the URL parameter
   const urlParams = new URLSearchParams(window.location.search);
@@ -109,6 +113,10 @@
 
   // Event listeners for next and previous buttons
   nextBtn.addEventListener('click', onNextBtnClick);
+  demoBtn.addEventListener('click', function() {
+      const noteString = data[currentIndex].demoNotes;
+      playDemo(noteString);
+  });
 
   function onNextBtnClick() {
     nextBtn.removeEventListener('click', onQuizBtnClick);
