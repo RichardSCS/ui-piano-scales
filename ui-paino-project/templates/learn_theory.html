@@ -9,6 +9,9 @@
   <p id="quizMessage"></p>
 
 </div>
+<div class="center-button-container">
+    <button id="demoButton">Play Demo</button>
+</div>
 <div class="row">
     {% include 'piano.html' %}
 </div>
@@ -16,17 +19,18 @@
 <script>
   // JSON Data
   const data = [
-    { id: 1, name: "Every key on the piano has a letter name. The first one we will learn is C.", image: "media/basic_theory_1.png", next_lesson_id:2, next_quiz_id:0 },
-    { id: 2, name: "Going from left to right, middle C is the 4th C note on the piano. C is the first note that we will play in the C major scale.", image: "media/basic_theory_2.png", next_lesson_id:3, next_quiz_id:1 },
-    { id: 3, name: "Piano keys can be grouped into octaves. There are 8 white keys and 5 black keys in each octave, and 5 black keys. Each white key has a letter name from A to F. An octave always starts and ends with the same letter, like C:", image: "media/basic_theory_3.jpeg", next_lesson_id:4, next_quiz_id:0 },
-    { id: 4, name: "The black keys on the piano are called flat(♭) and sharp(#) keys. They are half a step lower for flat keys, and half a step higher for sharp keys, from their corresponding white key.", image: "media/basic_theory_4.png", next_lesson_id:5, next_quiz_id:0 },
-    { id: 5, name: "Distance between keys is measured as whole steps and half steps. Any 2 keys directly next to each other, no matter the color, are a half step away from each other. 2 of these make a whole step", image: "media/basic_theory_5.jpeg", next_lesson_id:0, next_quiz_id:0 }
+    { id: 1, name: "Every key on the piano has a letter name. The first one we will learn is C.", image: "media/basic_theory_1.png", next_lesson_id:2, next_quiz_id:0, demoNotes:"C1, C2, C3, C4, C5, C6, C7, C8" },
+    { id: 2, name: "Going from left to right, middle C is the 4th C note on the piano. C is the first note that we will play in the C major scale.", image: "media/basic_theory_2.png", next_lesson_id:3, next_quiz_id:1, demoNotes:"C4" },
+    { id: 3, name: "Piano keys can be grouped into octaves. There are 8 white keys and 5 black keys in each octave, and 5 black keys. Each white key has a letter name from A to F. An octave always starts and ends with the same letter, like C:", image: "media/basic_theory_3.jpeg", next_lesson_id:4, next_quiz_id:0, demoNotes:"C4,C5,pause,pause,C4, C5" },
+    { id: 4, name: "The black keys on the piano are called flat(♭) and sharp(#) keys. They are half a step lower for flat keys, and half a step higher for sharp keys, from their corresponding white key.", image: "media/basic_theory_4.png", next_lesson_id:5, next_quiz_id:0, demoNotes:" C4, CSharp4, D4, DSharp4, E4, F4, FSharp4, G4, GSharp4, A4, ASharp4, B4, C5" },
+    { id: 5, name: "Distance between keys is measured as whole steps and half steps. Any 2 keys directly next to each other, no matter the color, are a half step away from each other. 2 of these make a whole step", image: "media/basic_theory_5.jpeg", next_lesson_id:0, next_quiz_id:0, demoNotes:"C4, CSharp4, pause, CSharp4, D4, pause, C4, D4" }
   ];
 
   // DOM Elements
   const dataDisplay = document.querySelector('.data-display');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const demoBtn = document.getElementById('demoButton');
 
   // Retrieve the currentIndex from the URL parameter
   const urlParams = new URLSearchParams(window.location.search);
@@ -65,7 +69,10 @@
 
   // Event listeners for next and previous buttons
   nextBtn.addEventListener('click', onNextBtnClick);
-
+  demoBtn.addEventListener('click', function() {
+      const noteString = data[currentIndex].demoNotes;
+      playDemo(noteString);
+  });
 function onNextBtnClick() {
   nextBtn.removeEventListener('click', onQuizBtnClick);
   nextBtn.removeEventListener('click', onNextLearnClick);

@@ -35,6 +35,12 @@
 .black:hover{
     background-color: dimgray;
 }
+.black:active,
+.white:active,
+.black.active,
+.white.active{
+    background-color: lightcoral;
+}
 
 /* Individual adjustments for each black key in a typical octave */
 .black.a-sharp-0 { left: 30px; }
