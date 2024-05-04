@@ -9,4 +9,16 @@
     <div class="row">
         {% include 'piano.html' %}
     </div>
+    <div class="center-button-container">
+        <button id="demoButton">Play Demo</button>
+    </div>
+    <script>
+      // JSON Data
+      const demoNotes = "pause,C4,pause,C5,pause,pause,pause,pause,pause,pause,B4,C5,B4,G4,A4,pause,pause,pause,pause,pause,F4,pause,F4,pause,F4,E4,D4,E4,C4";
+
+      const demoBtn = document.getElementById('demoButton');
+        demoBtn.addEventListener('click', function() {
+          playDemo(demoNotes, 250);
+      });
+    </script>
 {% endblock %}

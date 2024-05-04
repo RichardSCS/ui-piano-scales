@@ -36,23 +36,30 @@
 <div class="row">
     {% include 'piano.html' %}
 </div>
+<div class="center-button-container">
+    <button id="demoButton">Play Demo</button>
+</div>
 
 <script>
   // JSON Data
   const data = [
-    { id: 1, name: "Now we are ready to learn scales. A scale starts with one key, and ends on the same key but one octave higher. This scale starts and ends with C:", image: "media/basic_scales_1.png", next_lesson_id:2, next_quiz_id:0 },
-    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.jpeg", next_lesson_id:0, next_quiz_id:0 },
-    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.png", next_lesson_id:4, next_quiz_id:1 }
+    { id: 1, name: "Now we are ready to learn scales. A scale starts with one key, and ends on the same key but one octave higher. This scale starts and ends with C:", image: "media/basic_scales_1.png", next_lesson_id:2, next_quiz_id:0, demoNotes: "C4,D4,E4,F4,G4,A4,B4,C5" },
+    { id: 2, name: "All scales, no matter what key they start with, follow a pattern of steps as shown on the keyboard. C major scale happens to be all of the white keys, but not every scale will be.", image: "media/basic_scales_2.jpeg", next_lesson_id:0, next_quiz_id:0, demoNotes: "A3,B3,CSharp4,D4,E4,FSharp4,GSharp4,A4" },
+    { id: 3, name: "The key that a scale starts with determines its name.", image: "media/basic_scales_3.png", next_lesson_id:4, next_quiz_id:1, demoNotes: "D4,E4,FSharp4,G4,A4,B4,CSharp5,D5" }
   ];
 
   // DOM Elements
   const dataDisplay = document.querySelector('.data-display');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const demoBtn = document.getElementById('demoButton');
 
   // Retrieve the currentIndex from the URL parameter
   const urlParams = new URLSearchParams(window.location.search);
   let currentIndex = parseInt(urlParams.get('id')) - 1;
+  if (isNaN(currentIndex) || currentIndex < 0) {
+    currentIndex = 0;
+  }
 
   // Function to display data
   function displayData(index) {
@@ -61,6 +68,16 @@
       <p>${currentItem.name}</p>
       <img src="/static/${currentItem.image}" alt="${currentItem.name}"/>
     `;
+
+    // Disable or hide the "Previous" button based on currentItem's ID
+    if (currentItem.id === 1) {
+      //prevBtn.disabled = true;
+      // Alternatively, you can hide the button
+      prevBtn.style.visibility = 'hidden';
+    } 
+    else {
+      prevBtn.style.visibility = 'visible';
+    }
   }
 
   // Initial data display
@@ -74,19 +91,21 @@
 
   // Event listeners for next and previous buttons
   nextBtn.addEventListener('click', onNextBtnClick);
+  demoBtn.addEventListener('click', function() {
+      const noteString = data[currentIndex].demoNotes;
+      playDemo(noteString);
+  });
 
   function onNextBtnClick() {
-    const newIndex = currentIndex + 1;
-    if (newIndex < data.length) {
-      console.log('current page');
-      console.log(newIndex);
-      displayData(newIndex);
+    nextBtn.removeEventListener('click', onQuizBtnClick);
+    if (currentIndex < data.length - 1 && data[currentIndex].next_quiz_id === 0) {
+      currentIndex = currentIndex + 1;
+      displayData(currentIndex);
       prevBtn.disabled = false;
-      updateURL(data[newIndex].id);
-      currentIndex = newIndex; // Update currentIndex
+      updateURL(data[currentIndex].id);
     }
-    if (data[newIndex].next_quiz_id !== 0) {
-      document.getElementById('quizMessage').innerText = "Click next to test your knowledge so far!";
+    if (data[currentIndex].next_quiz_id !== 0) {
+      document.getElementById('quizMessage').innerText = "";
       nextBtn.disabled = false;
       nextBtn.removeEventListener('click', onNextBtnClick);
       nextBtn.addEventListener('click', onQuizBtnClick);
@@ -104,6 +123,8 @@
   prevBtn.addEventListener('click', onPrevBtnClick);
 
   function onPrevBtnClick() {
+    nextBtn.addEventListener('click', onNextBtnClick);
+    nextBtn.removeEventListener('click', onQuizBtnClick);
     if (currentIndex > 0) {
       currentIndex--;
       displayData(currentIndex);
