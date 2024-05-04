@@ -4,38 +4,42 @@
 <div class="container-fluid view-page">
     <div class="row">
         <h2>Theory Quiz Results</h2>
-        <ul>
+        <ul><li><span
             {% if quiz_results.theory %}
-            <li class="correct">Correct</li>
+              class="correct">Correct
             {% else %}
-                <li class="incorrect">Incorrect</li>
-            {% endif %}
+              class="incorrect">Incorrect
+            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.theory}} seconds</li>
         </ul>
 
         <h2>Scales Quiz Results</h2>
-        <ul>
+        <ul><li>Q1: <span
             {% if quiz_results.scales %}
-                <li class="correct">Correct</li>
+              class="correct">Correct
             {% else %}
-                <li class="incorrect">Incorrect</li>
-            {% endif %}
+              class="incorrect">Incorrect
+            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales}} seconds</li>
+            <li>Q2: <span
             {% if quiz_results.scales_major %}
-            <li class="correct">Correct</li>
+              class="correct">Correct
             {% else %}
-                <li class="incorrect">Incorrect</li>
-            {% endif %}
+              class="incorrect">Incorrect
+            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_major}} seconds</li>
+            <li>Q3: <span
             {% if quiz_results.scales_id %}
-            <li class="correct">Correct</li>
+              class="correct">Correct
             {% else %}
-                <li class="incorrect">Incorrect</li>
-            {% endif %}
+              class="incorrect">Incorrect
+            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_id}} seconds</li>
+            <li>Q4: <span
             {% if quiz_results.scales_2 %}
-            <li class="correct">Correct</li>
+              class="correct">Correct
             {% else %}
-                <li class="incorrect">Incorrect</li>
-            {% endif %}
+              class="incorrect">Incorrect
+            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_2}} seconds</li>
         </ul>
         <h3>Total Correct: {{total_correct}}</h3>
+        <h3>Total Time: {{ '%.2f' % total_time}} seconds</h3>
         <!-- Add more sections for other categories as needed -->
     </div>
 <div class="button-div-2">

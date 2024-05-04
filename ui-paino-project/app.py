@@ -38,16 +38,21 @@ quiz_time = {
 }
 
 total_correct = 0
+total_time = 0
 
 def CalcCorrect():
     global total_correct
+    global total_time
     correct = 0
+    time = 0
     for answer in quiz_results:
         if quiz_results[answer] == True:
             correct += 1
         totalTime = quiz_time[answer][1] - quiz_time[answer][0]
         quiz_results_time[answer] = totalTime
+        time += totalTime
     total_correct = correct
+    total_time = time
 
 @app.route('/')
 def hello_world():  # put application's code here a
@@ -68,36 +73,46 @@ def learn_scales():  # put application's code here
 @app.route('/quiz/theory')
 def quiz_theory():  # put application's code here
     if not(quiz_lock['theory']):
-        quiz_time['theory'][0] = time.time()
+        record = quiz_time['theory']
+        record[0] = time.time()
+        quiz_time['theory'] = record
     return render_template("quiz_theory.html")
 
 @app.route('/quiz/scales/1')
 def quiz_scale():  # put application's code here
     if not(quiz_lock['scales']):
-        quiz_time['scales'][0] = time.time()
+        record = quiz_time['scales']
+        record[0] = time.time()
+        quiz_time['scales'] = record
     return render_template("quiz_scales.html", lock=quiz_lock['scales'])
 
 @app.route('/quiz/scales/2')
 def quiz_scale_2():  # put application's code here
     if not(quiz_lock['scales_major']):
-        quiz_time['scales_major'][0] = time.time()
+        record = quiz_time['scales_major']
+        record[0] = time.time()
+        quiz_time['scales_major'] = record
     return render_template("quiz_scales_major.html", lock=quiz_lock['scales_major'])
 
 @app.route('/quiz/scales/3')
 def quiz_scale_3():  # put application's code here
     if not(quiz_lock['scales_id']):
-        quiz_time['scales_id'] = time.time()
+        record = quiz_time['scales_id']
+        record[0] = time.time()
+        quiz_time['scales_id'] = record
     return render_template("quiz_scales_identify.html", lock=quiz_lock['scales_id'])
 
 @app.route('/quiz/scales/4')
 def quiz_scale_4():  # put application's code here
     if not(quiz_lock['scales_2']):
-        quiz_time['scales_2'] = time.time()
+        record = quiz_time['scales_2']
+        record[0] = time.time()
+        quiz_time['scales_2'] = record
     return render_template("quiz_scales_2.html", lock=quiz_lock['scales_2'])
 
 @app.route('/results')
 def results():  # put application's code here
-    return render_template("results.html",quiz_results=quiz_results, quiz_results_time=quiz_results_time, total_correct=total_correct)
+    return render_template("results.html",quiz_results=quiz_results, quiz_results_time=quiz_results_time, total_correct=total_correct, total_time=total_time)
 
 @app.route('/practice')
 def practice():  # put application's code here
@@ -105,11 +120,19 @@ def practice():  # put application's code here
 
 @app.route('/restart')
 def restart():
+    global total_correct
+    global total_time
     for item in quiz_lock:
         quiz_lock[item] = False
     for item in quiz_results:
         quiz_results[item] = False
-    return render_template('quiz_theory.html')
+    for item in quiz_time:
+        quiz_time[item] = [0,0]
+    for item in quiz_results_time:
+        quiz_results_time[item] = 0
+    total_correct = 0
+    total_time = 0
+    return quiz_scale()
 
 @app.route('/submit-your-answer-theory', methods=['POST'])
 def submit_answer_theory():

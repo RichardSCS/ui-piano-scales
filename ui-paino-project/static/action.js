@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the current page URL
     var url = window.location.pathname;
-    console.log(url)
+    //console.log(url)
 
     // Check if it is the quiz-theory.html page
     if (url.endsWith("quiz/theory")) {
-        console.log("I'm in the file ")
         // Code specific to quiz-theory.html
         var keys = document.querySelectorAll(".piano .key");
         var answerAlert = document.getElementById("answer-alert");
 
         keys.forEach(function(key) {
             key.addEventListener("click", function() {
-                 console.log("i got clicked")
+                 //console.log("i got clicked")
                  if (key.getAttribute('data-note') === "C4") {
 
                     answerAlert.textContent = "Middle C was clicked!";
@@ -38,20 +37,23 @@ function returnAnswerTheory(answer){
     .then(response => response.text())
     .then(data => {
         // Handle any response from the server here
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.error('Error:', error));
 };
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-scales');
-
-    submitButton.addEventListener('click', function(event) {
+    if (document.getElementById('submit-button-scales') != null) {
+        submitButton.addEventListener('click', function(event) {
         event.preventDefault();  // Prevents form submission and page reload
         checkAnswer();
-        console.log("I got clicked here ")
+        //console.log("I got clicked here ")
     });
+    }
 });
+
 
 function returnAnswer(answer){
      fetch('/submit-your-answer', {
@@ -64,7 +66,7 @@ function returnAnswer(answer){
     .then(response => response.text())
     .then(data => {
         // Handle any response from the server here
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.error('Error:', error));
 };
@@ -97,10 +99,12 @@ function checkAnswer() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-major');
-    submitButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevents form submission and page reload
-        checkAnswer2();
-    });
+    if (document.getElementById('submit-button-major') != null) {
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevents form submission and page reload
+            checkAnswer2();
+        });
+    }
 });
 
 function checkAnswer2() {
@@ -138,27 +142,29 @@ function returnAnswer2(answer){
     .then(response => response.text())
     .then(data => {
         // Handle any response from the server here
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.error('Error:', error));
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-button-id2');
-    submitButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevents form submission and page reload
-        checkAnswer3();
-    });
+    if (document.getElementById('submit-button-id2') != null) {
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevents form submission and page reload
+            checkAnswer3();
+        });
+    }
 });
 
 function checkAnswer3() {
-    console.log("in 1")
+    //console.log("in 1")
     const form = document.getElementById('answer-form-id');
-     console.log("in 2")
+     //console.log("in 2")
     const resultDiv = document.getElementById('result-id');
-      console.log(form)
+      //console.log(form)
     const selectedOption = form.querySelector('input[name="scales3"]:checked');
- console.log("in 4")
+ //console.log("in 4")
     if (!selectedOption) {
         resultDiv.textContent = 'Please select an option.';
         resultDiv.style.color = 'red';
@@ -189,27 +195,29 @@ function returnAnswer3(answer){
     .then(response => response.text())
     .then(data => {
         // Handle any response from the server here
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.error('Error:', error));
 };
 
 document.addEventListener("DOMContentLoaded", function() {
     const submitButton = document.getElementById('submit-4');
-    submitButton.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevents form submission and page reload
-        checkAnswer4();
-    });
+    if (document.getElementById('submit-4') != null) {
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevents form submission and page reload
+            checkAnswer4();
+        });
+    }
 });
 
 function checkAnswer4() {
-    console.log("in 1")
+    //console.log("in 1")
     const form = document.getElementById('answer-4');
-     console.log("in 2")
+     //console.log("in 2")
     const resultDiv = document.getElementById('result-4');
-      console.log(form)
+      //console.log(form)
     const selectedOption = form.querySelector('input[name="scales4"]:checked');
- console.log("in 4")
+ //console.log("in 4")
     if (!selectedOption) {
         resultDiv.textContent = 'Please select an option.';
         resultDiv.style.color = 'red';
@@ -240,7 +248,7 @@ function returnAnswer4(answer){
     .then(response => response.text())
     .then(data => {
         // Handle any response from the server here
-        console.log(data);
+        //console.log(data);
     })
     .catch(error => console.error('Error:', error));
 };
