@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     answerAlert.style.color="green";
                 } else {
                     answerAlert.textContent = "Try again!";
+                    answerAlert.style.color="red";
                 }
                  returnAnswerTheory(key.getAttribute('data-note'))
             });
