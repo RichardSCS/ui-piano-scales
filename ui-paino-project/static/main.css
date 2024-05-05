@@ -34,6 +34,7 @@ body{
   font-weight: bold;
   text-align: center;
   color:#7D7D7D;
+    margin-bottom: -10px;
 }
 .instruction{
   margin-top: 50px;
@@ -49,6 +50,11 @@ body{
 .scalesimage{
     margin-top: 30px;
     margin-left: 35%;
+}
+.scalesimage-2{
+    margin-top: -40px;
+    margin-left: 35%;
+    margin-bottom: 40px;
 }
 #answer-alert{
     min-height: 30px;
@@ -159,6 +165,7 @@ body{
     margin-left: 1100px;
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
+      margin-left: 1130px;
   }
   #demoButton{
     background-color: #203354;  /* Set background color for buttons */
@@ -311,6 +318,9 @@ body{
 .scalesimage{
     margin-top: -10px;
 }
+.but-con{
+    margin-top: 15px;
+}
 
 .center-button-container{
     display: flex;
@@ -321,17 +331,22 @@ body{
     margin-top:-120px;
 }
 .piano-2{
-    margin-top:-60px;
-    margin-bottom: 15px;
+    margin-top:-70px;
+    margin-bottom: -10px;
 }
 .piano-3{
     margin-top:-100px;
     margin-bottom: 15px;
 }
 .piano-4{
-    margin-top:-100px;
+    margin-top:-80px;
     margin-bottom: 15px;
 }
+.piano-5{
+    margin-top:0px;
+    margin-bottom: 15px;
+}
+
 
 
 
@@ -373,8 +388,36 @@ body{
     cursor: pointer; /* Add pointer cursor for interaction */
     border-radius: 5px; /* Add border-radius for rounded corners */
      flex-grow: 0;
-    margin-left:1200px;
+    margin-left:1210px;
     margin-top: 2px;
     margin-bottom: -90px;
+
+}
+.button-nxt-3{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: 1105px;
+
+
+}
+.button-nxt-4{
+    display: inline-block;
+    background-color: #203354;/*#d90429; /* Set background color for buttons */
+    color: #edf2f4; /* Set text color for buttons */
+    border: none; /* Remove default button border */
+    padding: 10px 20px; /* Add padding to buttons */
+    /*margin: 5px; !* Add margin to separate buttons *!*/
+    cursor: pointer; /* Add pointer cursor for interaction */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+     flex-grow: 0;
+    margin-left: 1110px;
+
 
 }
