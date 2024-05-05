@@ -2,51 +2,56 @@
 
 {% block content %}
 <div class="container-fluid view-page">
-    <div class="row">
-        <h2>Theory Quiz Results</h2>
-        <ul><li>Q1: <span
-            {% if quiz_results.theory %}
-              class="correct">Correct
-            {% else %}
-              class="incorrect">Incorrect
-            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.theory}} seconds</li>
-        </ul>
+    <div class="row justify-content-center res-adjust"> <!-- Add justify-content-center class here -->
+        <div class="col-md-8"> <!-- Add column classes to control width -->
+            <h2>Theory Quiz Results</h2>
+            <ul>
+                <li>Q1: <span
+                    {% if quiz_results.theory %}
+                      class="correct">Correct
+                    {% else %}
+                      class="incorrect">Incorrect
+                    {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.theory}} seconds</li>
+            </ul>
 
-        <h2>Scales Quiz Results</h2>
-        <ul><li>Q1: <span
-            {% if quiz_results.scales %}
-              class="correct">Correct
-            {% else %}
-              class="incorrect">Incorrect
-            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales}} seconds</li>
-            <li>Q2: <span
-            {% if quiz_results.scales_major %}
-              class="correct">Correct
-            {% else %}
-              class="incorrect">Incorrect
-            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_major}} seconds</li>
-            <li>Q3: <span
-            {% if quiz_results.scales_id %}
-              class="correct">Correct
-            {% else %}
-              class="incorrect">Incorrect
-            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_id}} seconds</li>
-            <li>Q4: <span
-            {% if quiz_results.scales_2 %}
-              class="correct">Correct
-            {% else %}
-              class="incorrect">Incorrect
-            {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_2}} seconds</li>
-        </ul>
-        <h3>Total Correct: {{total_correct}}</h3>
-        <h3>Total Time: {{ '%.2f' % total_time}} seconds</h3>
-        <!-- Add more sections for other categories as needed -->
+            <h2>Scales Quiz Results</h2>
+            <ul>
+                <li>Q1: <span
+                    {% if quiz_results.scales %}
+                      class="correct">Correct
+                    {% else %}
+                      class="incorrect">Incorrect
+                    {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales}} seconds</li>
+                <li>Q2: <span
+                    {% if quiz_results.scales_major %}
+                      class="correct">Correct
+                    {% else %}
+                      class="incorrect">Incorrect
+                    {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_major}} seconds</li>
+                <li>Q3: <span
+                    {% if quiz_results.scales_id %}
+                      class="correct">Correct
+                    {% else %}
+                      class="incorrect">Incorrect
+                    {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_id}} seconds</li>
+                <li>Q4: <span
+                    {% if quiz_results.scales_2 %}
+                      class="correct">Correct
+                    {% else %}
+                      class="incorrect">Incorrect
+                    {% endif %}</span>Time: {{ '%.2f' % quiz_results_time.scales_2}} seconds</li>
+            </ul>
+            <h3>Total Correct: {{total_correct}}</h3>
+            <h3>Total Time: {{ '%.2f' % total_time}} seconds</h3>
+        </div>
     </div>
-<div class="button-div-2">
-    <a href="/practice" class="btn button-std">More Practice</a>
-</div>
-<div class="button-div-2">
-    <a href="/restart" class="btn button-std">Retry Quizes</a>
-</div>
+    <div class="row justify-content-center res-adjust-2"> <!-- Add justify-content-center class here -->
+        <div class="col-md-8"> <!-- Add column classes to control width -->
+            <div class="button-div-2">
+                <a href="/practice" class="btn button-std">More Practice</a>
+                <a href="/restart" class="btn button-std">Retry Quizzes</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
